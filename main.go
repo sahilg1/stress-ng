@@ -30,6 +30,7 @@ func main() {
 		}
 	case "MEM":
 		{
+			log.Println("MEMORY")
 			fmt.Println("MEMORY STRESS TEST")
 			memBytes := os.Getenv("STRESS_MEM_BYTES")
 			arg1 := "-v"
@@ -37,6 +38,7 @@ func main() {
 			arg3 := "--vm-bytes"
 			cmd := exec.Command(app, arg1, arg2, Workers, arg3, memBytes)
 			err := cmd.Run()
+			log.Println("MEMORY")
 			if err != nil {
 				log.Fatal(err)
 			}
